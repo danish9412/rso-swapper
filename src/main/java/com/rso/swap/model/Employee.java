@@ -56,21 +56,4 @@ public class Employee implements Serializable {
     @Setter
     private String type;
 
-    /*@JsonCreator
-    public Employee (@JsonProperty("userId") Integer userId) {
-        this.userId = userId;
-    }*/
-
-    /*@OneToMany(cascade = CascadeType.ALL,
-            orphanRemoval = true)
-    @JoinColumn(name = "userId")
-    @JsonManagedReference
-    private List<Shift> shifts = new ArrayList<Shift>();
-
-    public void addShift(Shift shift) {
-        shifts.add(shift);
-        shift.setEmployee(this);
-    }
-*/
-
 }

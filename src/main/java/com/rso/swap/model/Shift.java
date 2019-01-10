@@ -37,24 +37,4 @@ public class Shift implements Serializable {
     @Setter
     private String empcode;
 
-	/*@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name="userId", referencedColumnName="userId")
-    @NotNull
-    @JsonBackReference
-    @Getter
-    @Setter
-	private Employee employee;
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Shift )) return false;
-        return shiftId != null && shiftId.equals(((Shift) o).shiftId);
-    }
-*/
-    /*@Override
-    public String toString(){
-        return String.format("\"give\":%s, \"need\":%s, \"userId\":%s", give, need, employee.getUserId());
-    }*/
-
 }

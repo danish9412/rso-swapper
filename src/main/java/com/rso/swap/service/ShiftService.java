@@ -45,7 +45,7 @@ public class ShiftService {
 
         for(Shift shift : allShifts){
             for(Shift myShift : myShifts){
-                if ((myShift.getNeed().equals(shift.getGive())) && (myShift.getEmpcode()!=shift.getEmpcode())){
+                if (shiftMatcher(myShift.getGive(), shift.getNeed())){
                     matchedShifts.add(shift);
                 }
             }
