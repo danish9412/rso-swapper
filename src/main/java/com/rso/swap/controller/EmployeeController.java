@@ -38,7 +38,7 @@ public class EmployeeController {
 		// inserting employee
 		@PostMapping("/employees")
 		public void addUser(@RequestBody Employee employee){
-			employeeService.addUser(employee);
+			employeeService.addEmployee(employee);
 		}
 
 		//updating employee by id

@@ -5,6 +5,7 @@ import java.util.List;
 import com.rso.swap.model.Employee;
 import com.rso.swap.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -14,9 +15,12 @@ public class EmployeeService {
 
 	@Autowired
 	private EmployeeRepository employeeRepository;
-	
 
-	// fetching all department
+    @Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
+
+
+    // fetching all department
 	public List<Employee> getAllEmployee(){
 		List<Employee> employees = (List<Employee>) employeeRepository.findAll();
 		return employees;
@@ -26,11 +30,16 @@ public class EmployeeService {
 	public Employee getEmployee(Long id){
 		return employeeRepository.findOne(id);
 	}
+
+    // fetching employee by id
+    public Employee getEmployeeByEmpcode(Long empcode){
+        return employeeRepository.getEmployeeByEmpcode(empcode);
+    }
 	
 	// inserting employee
 	@Transactional
-	public void addUser(Employee u) {
-		employeeRepository.save(u);
+	public void addEmployee(Employee employee) {
+		employeeRepository.save(employee);
 	}
 	
 	// updating employee by id
