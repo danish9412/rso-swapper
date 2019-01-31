@@ -10,7 +10,7 @@ import java.util.List;
 
 public interface EmployeeRepository extends CrudRepository<Employee, Long>{
 
-    @Query(value = "SELECT * FROM employee e where e.empcode = :empcode", nativeQuery = true)
+    @Query(value = "SELECT e.* FROM employee e where e.empcode = :empcode", nativeQuery = true)
     Employee getEmployeeByEmpcode(@Param("empcode") Long empcode);
 
 }

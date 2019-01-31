@@ -35,7 +35,7 @@ public class SignupController {
         Employee employeeExists = employeeService.getEmployeeByEmpcode((long) employee.getEmpcode());
 
         if(employeeExists != null) {
-            return "welcome";
+            return "signupfail";
         }
 
         employee.setPassword(bCryptPasswordEncoder.encode(employee.getPassword()));

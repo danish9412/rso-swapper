@@ -16,13 +16,11 @@ public class LoginService {
 
     public Employee validateEmployee(String empcode, String password){
 
-        Employee employee = null;
-
         if(empcode.isEmpty() || password.isEmpty()) {
             return null;
         } else {
 
-            Employee emp = employeeService.getEmployee(Long.getLong(empcode));
+            Employee emp = employeeService.getEmployeeByEmpcode(Long.parseLong(empcode));
 
             if(emp == null){
                 return null;
